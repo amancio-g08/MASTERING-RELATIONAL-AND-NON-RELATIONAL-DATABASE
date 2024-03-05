@@ -1,0 +1,15 @@
+SET SERVEROUTPUT ON
+DECLARE
+V_NUMERO NUMBER(2) := 1;
+V_NOME VARCHAR2(50);
+BEGIN
+    LOOP
+        -- INSTRUÇÕES
+        SELECT NOME INTO V_NOME FROM ALUNO WHERE RM LIKE V_NUMERO||'%';
+        DBMS_OUTPUT.PUT_LINE(V_NOME);
+        V_NUMERO := V_NUMERO + 1;
+        EXIT WHEN (V_NUMERO > 3);
+        END LOOP;
+        
+        
+        END;
